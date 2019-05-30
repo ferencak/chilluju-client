@@ -16,8 +16,7 @@ export class WelcomeComponent implements OnInit {
     {text: "Nevíš, jaksý film si pustit? Neměj obavy a <br/><a class='text-red'>prozkoumej</a> nejlépe hodnocené filmy."}
   ]
   welcomeMessage: any
-  @Input('clientNavLinksTempRef') 
-  private clientNavLinksTempRef:TemplateRef<any>
+
   constructor(
     private _clientService: ClientService,
   ) {
