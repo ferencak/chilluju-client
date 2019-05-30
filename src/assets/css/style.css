@@ -1,0 +1,130 @@
+html {
+    -webkit-transform: translate3d(0,0,0)!important;
+    scroll-behavior: smooth!important;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    padding: 0px;
+    overflow-x: hidden;
+    min-width: 320px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.4285em;
+}
+::-webkit-scrollbar {
+    display:none
+}
+
+section {
+    display: block;
+    background: #1a1a1a;
+    height: 100%;
+    padding: 60px;
+    padding-left: 120px;
+}
+
+#home {
+    background: url("/assets/background-min.PNG") center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px
+}
+
+#register {
+    background: url("/assets/background-min.PNG") center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 30px;
+    
+}
+
+.welcome {
+    display: table;
+    text-align: center;
+    margin: 0 auto;
+    height: -webkit-fill-available
+}
+
+.content {
+    vertical-align: middle;
+    display:table-cell
+}
+
+#pricing-list {
+    box-shadow: 0px 0px 20px 5px #000;
+    background: transparent;
+    color: #fff;
+    font-size: 30px;
+}
+
+.bold {
+    font-weight: bold!important
+}
+
+.or:before {
+    line-height: 1.685714em!important
+}
+.ui[class*="right labeled"].icon.button {
+    padding-right: 2.801429em!important
+}
+
+.ui.buttons .or:before {
+    content: '||'!important
+}
+
+.shadow {
+    box-shadow: 0 0 7px 0px rgb(0, 0, 0)!important;
+}
+
+.text-red {
+    color: #db2828!important
+}
+
+.label-badge-content:hover {
+    background-color: #1a1a1a!important
+}
+.ui.red.button:hover, .ui.red.buttons .button:hover {
+    background-color: #9d1f1f!important;
+}
+.ui.form input:not([type]):focus, .ui.form input[type=date]:focus, .ui.form input[type=datetime-local]:focus, .ui.form input[type=email]:focus, .ui.form input[type=file]:focus, .ui.form input[type=number]:focus, .ui.form input[type=password]:focus, .ui.form input[type=search]:focus, .ui.form input[type=tel]:focus, .ui.form input[type=text]:focus, .ui.form input[type=time]:focus, .ui.form input[type=url]:focus {
+    border-color:#212121!important;
+}
+.link:hover {
+    color:#db2121!important;
+    -webkit-transition: color 0.3s;
+    -moz-transition:    color 0.3s;
+    -ms-transition:     color 0.3s;
+    -o-transition:      color 0.3s;
+    transition:         color 0.3s;
+}
+.ui.black.button, .ui.black.buttons .button {
+    color: #797979!important;
+}
+.form-title {
+    font-size: 17px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    display: -webkit-inline-box;
+    padding-bottom: 14px;
+    color: #fff;
+    font-family: Verdana;
+}
+.form-input {
+    background: #1a1a1ad4!important;
+    color: #d9d9d9!important;
+}
+.ui.message.negative {
+    background-color: #8e57571a!important;
+    color: #DB2800!important;
+    border:1px solid!important;
+    box-shadow: unset!important;
+}
+.ui.message.success {
+    background-color: #608e571a!important;
+    color: rgb(57, 160, 53)!important;
+    border:1px solid!important;
+    box-shadow: unset!important;
+}

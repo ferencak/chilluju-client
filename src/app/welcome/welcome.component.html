@@ -1,0 +1,136 @@
+<section id="home">
+    <div class="ui grid">
+       <div class="sixteen wide column">
+          <img class="left floated column" src="/assets/logo-1080x166.png" style="    width: 224px;
+             height: 32px;
+             position: absolute;
+             left: 28px;">
+          <button *ngIf="client != undefined && !isLogged" class="ui red right floated column button" routerLink="/login" style="    height: 36px;
+             position: relative;
+             right: 79px;
+             border-radius: 0px;">
+          Přihlásit se
+          </button>
+          <ng-container *ngTemplateOutlet="clientNavLinksTempRef"></ng-container>
+          
+       </div>
+    </div>
+    <ng-template [ngIf]="client != undefined && !isLogged">
+      <div class="welcome">
+         <div class="content">
+            <p style="width:750px;font-family: 'Roboto'" [innerHTML]="welcomeMessage.text"></p>
+            <div class="ui large buttons">
+               <button routerLink="register" class="ui red right labeled icon button">
+               Založit si účet
+               <i class="right chevron icon"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+    </ng-template>
+    
+    <ng-template [ngIf]="isLogged">
+      <div class="welcome">
+         <div class="content">
+            <p style="width:750px;font-family: 'Roboto'" [innerHTML]="welcomeMessage.text"></p>
+            <div class="ui large buttons">
+               <button routerLink="register" class="ui red right labeled icon button">
+               
+               <i class="right chevron icon"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+    </ng-template>
+    
+</section>
+
+  <!--
+  <section id="pricing-list">
+    <div class="ui grid sixteen wide">
+       <div class="ui sixteen wide column" style="top:100px">
+          <h1 style="font-family: 'Roboto';text-align: center">Pořiď si prémiový účet a získej super výhody!</h1>
+       </div>
+       <div class="ui ten wide column" style="display: block;
+          margin: 0 auto;top:150px">
+          <div class="ui center aligned column pricing-head">
+             <div class="table-container">
+                <div class="table-price-table">
+                   <div class="table-head-price-table">
+                      
+                    <div class="column-price-table">&nbsp;</div>
+                    <div class="column-price-table title" [class.active]="selectedPackage == 1" (click)="selectedPackage == 1 ? selectedPackage = 0 : selectedPackage = 1">{{ localData['basic']['name'] }}</div>
+                    <div class="column-price-table empty">&nbsp;</div>
+                    <div class="column-price-table title" [class.active]="selectedPackage == 2" (click)="selectedPackage == 2 ? selectedPackage = 0 : selectedPackage = 2">{{ localData['advanced']['name'] }}</div>
+                    <div class="column-price-table empty">&nbsp;</div>
+                    <div class="column-price-table title" [class.active]="selectedPackage == 3" (click)="selectedPackage == 3 ? selectedPackage = 0 : selectedPackage = 3">{{ localData['profi']['name'] }}</div>
+                      
+                 </div>
+                   <div class="row-price-table">
+                      <div class="column-price-table light col-title">
+                         <p style="margin:0px!important;">
+                            Cena
+                         </p>
+                         <span class="text-dark">
+                         Cena měsíčního předplacení (včetně DPH)
+                         </span>
+                      </div>
+                      <div class="column-price-table light pricing">125 Kč</div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light pricing">250 Kč</div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light pricing">300 Kč</div>
+                 </div>
+                 
+                   <div class="row-price-table">
+                      <div class="column-price-table light col-title">
+                         <p style="margin:0px!important;">
+                            Předběžný příštup  
+                         </p>
+                         <span class="text-dark">
+                         Zajišťuje předběžný přístup k nově přidaným médiím
+                         </span>
+                      </div>
+                      <div class="column-price-table light blank"><i class="close icon"></i></div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank"><i class="check icon"></i></div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank"><i class="check icon"></i></div>
+                   </div>
+                   <div class="row-price-table">
+                      <div class="column-price-table light col-title">
+                         <p style="margin:0px!important;">Kvalita přehrávání</p>
+                         <span class="text-dark">
+                         Maximální možná kvalita přehrávání
+                         </span>
+                      </div>
+                      <div class="column-price-table light blank">HD</div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank">FullHD</div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank">FullHD+</div>
+                   </div>
+                   <div class="row-price-table">
+                      <div class="column-price-table light col-title">
+                         <p style="margin:0px!important;">Přerušení předplatného</p>
+                         <span class="text-dark">
+                         Možnost přerušení předplatného kdykoliv
+                         </span>
+                      </div>
+                      <div class="column-price-table light blank"><i class="check icon"></i></div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank"><i class="check icon"></i></div>
+                      <div class="column-price-table light pricing empty">&nbsp;</div>
+                      <div class="column-price-table light blank"><i class="check icon"></i></div>
+                   </div>
+                 
+                </div>
+              <div *ngIf="selectedPackage != 0" class="ui" style="float:right!important;margin-right:-4px!important">
+                <button class="ui red right labeled icon button" style="border-radius: 0px!important">Zakoupit balíček () <i class="right chevron icon"></i> </button>
+              </div>
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+-->

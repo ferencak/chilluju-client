@@ -1,0 +1,90 @@
+<section id="register" style="display:-webkit-box">
+    <div class="ui grid">
+       <div class="sixteen wide column">
+          <img (click)="routeToHome()" class="left floated column" src="/assets/logo-1080x166.png" style="    width: 224px;
+             height: 32px;
+             position: absolute;
+             left: 28px;
+             cursor: pointer">
+       </div>
+    </div>
+    <div *ngIf="isReady" class="ui middle aligned center aligned grid" style="width: 400px;margin: 0 auto;">
+      <div class="column">
+        <form class="ui large form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="ui stacked segment" style="background: #0f0f0f!important">
+              <span class="form-title">Registrace</span>
+              <div *ngIf="isResponse" class="ui message" [class.negative]="response.type == 'negative'" [class.success]="response.type == 'success'" style="display:block!important;margin-top:0px">
+                {{ response.message }}
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="address card icon" style="color: #eee;" [class.text-red]="submitted && f.firstName.errors"></i>
+                  <input type="text" formControlName="firstName" class="form-input" placeholder="Křestní jméno" required/>
+                </div>
+                <div *ngIf="submitted && f.firstName.errors" class="text-red" style="text-align: left">
+                  <div *ngIf="f.firstName.errors.required">
+                    Křestní jméno není zadáno
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="address card icon" style="color: #eee;" [class.text-red]="submitted && f.lastName.errors"></i>
+                  <input type="text" formControlName="lastName" class="form-input" placeholder="Příjmení" required/>
+                </div>
+                <div *ngIf="submitted && f.lastName.errors" class="text-red" style="text-align: left">
+                  <div *ngIf="f.lastName.errors.required">
+                    Přijmení není zadáno
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="at icon" style="color: #eee;" [class.text-red]="submitted && f.email.errors"></i>
+                  <input type="email" formControlName="email" class="form-input" placeholder="Emailová adresa" required>
+                </div>
+                <div *ngIf="submitted && f.email.errors" class="text-red" style="text-align: left">
+                  <div *ngIf="f.email.errors.required">
+                    Emailová adresa není zadána
+                  </div>
+                  <div *ngIf="f.email.errors.email">
+                    Emailová adresa je neplatná
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="unlock icon" style="color: #eee;" [class.text-red]="submitted && f.password.errors"></i>
+                  <input type="password" formControlName="password" class="form-input" placeholder="Heslo" required>
+                </div>
+                <div *ngIf="submitted && f.password.errors" class="text-red" style="text-align: left">
+                  <div *ngIf="f.password.errors.required">
+                    Heslo není zadáno
+                  </div>
+                  <div *ngIf="f.password.errors.minlength">
+                    Heslo musí mít minimálně 6 znaků
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="unlock icon" style="color: #eee;" [class.text-red]="submitted && f.confirmPassword.errors"></i>
+                  <input type="password" formControlName="confirmPassword" class="form-input" placeholder="Heslo (kontrola)" required>
+                </div>
+                <div *ngIf="submitted && f.confirmPassword.errors" class="text-red" style="text-align: left">
+                  <div *ngIf="f.confirmPassword.errors.required">
+                    Kontrolní heslo není zadáno
+                  </div>
+                  <div *ngIf="f.confirmPassword.errors.mustMatch">
+                    Kontrolní heslo nesouhlasí
+                  </div>
+                </div>
+              </div>
+              <button class="ui fluid red button" type="submit">Registrovat</button>
+              <span style="color: #555;font-size: 12px;">* Touto registrací souhlasíte s <span class="link" style="color: #787878;">Podmínky používání</span></span><br/>
+              <a class="ui mini black button" style="margin-top: 9px;" routerLink="/login">Přejít k přihlášení <i class="angle double right icon"></i></a>
+            </div>          
+          </form>
+      </div>
+    </div>
+  </section>
