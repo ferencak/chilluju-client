@@ -1,20 +1,18 @@
-<section id="home">
+<section style="padding-bottom: 0px!important">
     <div class="ui grid">
        <div class="sixteen wide column">
           <img class="left floated column" src="/assets/logo-1080x166.png" style="    width: 224px;
              height: 32px;
-             position: absolute;
-             left: 28px;">
+             position: absolute;">
           <button *ngIf="client != undefined && !isLogged" class="ui red right floated column button" routerLink="/login" style="    height: 36px;
              position: relative;
-             right: 79px;
              border-radius: 0px;">
           Přihlásit se
           </button>
-          <button *ngIf="client != undefined && isLogged" class="ui red right floated column button" routerLink="/aa" style="height: 36px;position: relative;right: 79px;border-radius: 0px;">
+          <button *ngIf="client != undefined && isLogged" class="ui red right floated column button" routerLink="/aa" style="height: 36px;border-radius: 0px;">
             Odhlásit se
             </button>
-            <button *ngIf="client != undefined && isLogged" class="ui red right floated column button" routerLink="/aa" style="height: 36px;position: relative;right: 79px;border-radius: 0px;margin-right: 15px;">
+            <button *ngIf="client != undefined && isLogged" class="ui red right floated column button" routerLink="/aa" style="height: 36px;border-radius: 0px;margin-right: 15px;">
             Můj účet
         </button>
           
@@ -34,22 +32,15 @@
       </div>
     </ng-template>
     
-    <ng-template [ngIf]="isLogged">
-      <div class="welcome">
-         <div class="content">
-            <p style="width:750px;font-family: 'Roboto'" [innerHTML]="welcomeMessage.text"></p>
-            <div class="ui large buttons">
-               <button routerLink="register" class="ui red right labeled icon button">
-               
-               <i class="right chevron icon"></i>
-               </button>
-            </div>
+    <ng-template [ngIf]="client != undefined && isLogged">
+      <div class="ui grid">
+         <div class="sixteen wide column">
+            asd
          </div>
       </div>
     </ng-template>
     
 </section>
-
   <!--
   <section id="pricing-list">
     <div class="ui grid sixteen wide">

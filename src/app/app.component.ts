@@ -6,8 +6,6 @@ import { Component, ViewChild, TemplateRef } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @ViewChild('clientNavLinks')
-  clientNavLinksRef: TemplateRef<any>;
 
   constructor() {}
 

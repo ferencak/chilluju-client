@@ -22,10 +22,7 @@ section {
     background: #1a1a1a;
     height: 100%;
     padding: 60px;
-    padding-left: 120px;
-}
-
-#home {
+    padding-bottom: unset!important;
     background: url("/assets/background-min.PNG") center center fixed;
     background-repeat: no-repeat;
     background-size: cover;

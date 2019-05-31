@@ -22,10 +22,9 @@
     padding-right:15px;
 }
 .patreon-badge {
-    position: fixed;
-    width: 118px;
-    right: 0px;
-    bottom: 0px;
+    width: 110px;
+    position: absolute;
+    margin-top: -2px;
 }
 .patreon-badge:hover {
     cursor: pointer;
